@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .board {
+            position: absolute;
+            top: 2%;
+            left: 20%;
+            height: 700px;
+            width: 500px;
+            background-color: gray;
+            border: 2px solid black;
+            overflow: hidden;
+        }
+
+        .panel {
+            position: absolute;
+            right: 15%;
+            top: 10%;
+            width: 250px;
+            height: 600px;
+            background-color: #aaa;
+        }
+
+        .line {
+            position: absolute;
+            top: 0px;
+            width: 40px;
+
+        }
+
+
+        .square {
+            position: absolute;
+            display: flex;
+            left: 40px;
+            width: 100px;
+            flex-wrap: wrap;
+        }
+
+        .zet {
+            display: flex;
+            position: absolute;
+            right: 100px;
+            width: 120px;
+            flex-wrap: wrap;
+            /* transform: rotate(90deg); */
+        }
+
+        .zet div:nth-of-type(3) {
+            margin-left: 40px;
+            color: blue;
+        }
+
+        .brick {
+            position: relative;
+            width: 50px;
+            height: 50px;
+            top: 20px;
+            left: 40px;
+            background-color: black;
+            border: 1px solid white;
+        }
+    </style>
+    <title>Tetris</title>
+</head>
+
+<body>
+    <div class="board">
+        <div class="brick"></div>
+        <!-- <div class="line">
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+        </div>
+        <div class="square">
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+        </div>
+        <div class="zet">
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+        </div> -->
+    </div>
+    <div class="panel">
+        <button id="start">Start Game</button>
+    </div>
+    <script src="Game.js"></script>
+    <script src="GameField.js"></script>
+    <script src="Brick.js"></script>
+    <script src="main(ver0.2).js"></script>
+</body>
+
+</html>
