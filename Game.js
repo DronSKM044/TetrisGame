@@ -4,18 +4,33 @@ class Game {
     this.gameField = gameField;
     this.scoreField = scoreField;
     this.menuField = menuField;
+    this.btn = document.createElement('button');
+    this.btnReset = document.createElement('button');
+    this.btn.innerHTML = "start";
+    this.btnReset.innerHTML = "reset";
+    this.menuField.appendChild(this.btn);
+    this.menuField.appendChild(this.btnReset);
  }
-
- createBtn(){
-     const btn = document.createElement('button');
-     btn.innerHTML = "start";
-     this.menuField.appendChild(btn);
+ 
+ init(){
+    this.btn.addEventListener('click',()=>{
+        this.start();
+    })
  }
-
+ // funkcja reset czyszcząca połe gry
+ reset(){
+    this.btnReset.addEventListener('click',()=>{
+        while(this.gameField.firstChild){
+            this.gameField.removeChild(this.gameField.firstChild);
+        }
+    })
+ }
  start(){
-    this.createBtn();
     const brick =  new Brick();
     this.gameField.appendChild(brick.createBrick());
+    brick.moveDown();
+    this.reset();   
+    
  };
 }
 
@@ -24,4 +39,4 @@ const game= new Game({
     scoreField:document.getElementById('score'),
     menuField:document.getElementById('menu'),
 });
-game.start();
+game.init();
