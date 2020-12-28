@@ -15,6 +15,7 @@ class Game {
  init(){
     this.btn.addEventListener('click',()=>{
         this.start();
+        this.reset();   
     })
  }
  // funkcja reset czyszcząca połe gry
@@ -23,14 +24,18 @@ class Game {
         while(this.gameField.firstChild){
             this.gameField.removeChild(this.gameField.firstChild);
         }
+
     })
  }
+
  start(){
     const brick =  new Brick();
     this.gameField.appendChild(brick.createBrick());
-    brick.moveDown();
-    this.reset();   
+    brick.moveDown(this.gameField.clientHeight);
+    brick.moveLeft();
+    brick.moveRight();
     
+    // console.log(this.gameField.clientHeight)
  };
 }
 

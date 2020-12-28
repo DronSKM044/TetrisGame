@@ -13,10 +13,14 @@ export class Brick{
         this.brick.classList.add('brick');
         return this.brick;
     }
-    moveDown(){
+    moveDown(downBorder){
+        // if(this.x >= downBorder) console.log(downBorder);
+        console.log(downBorder);
+        // console.log(this.x); +
         this.brick.style.top = this.x + "px"; 
         this.x += 20;
        this.timeoutCounter = setTimeout(this.moveDown.bind(this),500)
+       
     }
     moveLeft(){
         document.addEventListener('keydown', (e)=>{
