@@ -29,13 +29,13 @@ class Game {
  }
 
  start(){
-    const brick =  new Brick();
+    const brick =  new Brick(0,this.gameField.clientHeight, this.gameField);
     this.gameField.appendChild(brick.createBrick());
-    brick.moveDown(this.gameField.clientHeight);
+    brick.moveDown();
     brick.moveLeft();
     brick.moveRight();
     
-    // console.log(this.gameField.clientHeight)
+    // console.log(this.gameField)
  };
 }
 
