@@ -12,6 +12,7 @@ export class Brick{
         this.gameFieldHeight = gameFieldHeight;
         this.gameField = gameField;
         this.movebled = true;
+        this.increaseSpeed = 500
     }
     createBrick(){
         this.brick = document.createElement('div');
@@ -25,7 +26,18 @@ export class Brick{
         // console.log(this.x); 
         this.brick.style.top = this.x + "px"; 
         this.x += 30;
-       this.timeoutCounter = setTimeout(this.moveDown.bind(this),500)
+       this.timeoutCounter = setTimeout(this.moveDown.bind(this),this.increaseSpeed)
+       document.addEventListener('keydown', (e)=>{
+        if(e.key.toLowerCase() === "arrowdown") {
+           return this.increaseSpeed = 50;
+        } 
+    })
+      document.addEventListener('keyup', (e)=>{
+        if(e.key.toLowerCase() === "arrowdown") {
+            return this.increaseSpeed = 500;
+         } 
+
+      })
        
     }
     moveLeft(){
